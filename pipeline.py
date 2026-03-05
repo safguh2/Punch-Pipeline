@@ -4,6 +4,7 @@ import ast
 import configluz
 from sources import start_stream
 
+
 async def consume_data(queue, verifier, api):
     while True:
         data = await queue.get()
