@@ -1,0 +1,45 @@
+import asyncio
+from pydantic import ValidationError, create_model
+
+
+class SchemaValidator:
+    def __init__(self, api):
+        self.api = api
+        self.schemas = dict()
+
+        asyncio.create_task(self.schema_auto_loader())
+
+
+    async def schema_auto_loader(self):
+        while True:
+            print("loading new schema")
+            self.load_schemas()
+            await asyncio.sleep(5)
+
+
+    def load_schemas(self):
+        self.schemas = dict()
+        for schema in self.api.get_schemas():
+            self.schemas[schema["label"]] = create_model(schema['label'], **schema["fields"])
+            print(schema)
+
+
+    def verify(self, object:dict):
+        if "label" not in object:
+            print("schema label in object doesn't exists")
+            return False
+
+        label = object['label']
+        if label not in self.schemas:
+            print("schema label doesn't exist in current schemas")
+            return False
+
+        model = self.schemas[label]
+
+        try:
+            validated = model(**object['fields'])
+            return True
+
+        except ValidationError as e:
+            print(f"Invalid data for schema '{label}': {object}")
+            return False
