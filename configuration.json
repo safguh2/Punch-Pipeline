@@ -1,4 +1,15 @@
 {
-	"addr": "127.0.0.1",
-	"port": 3000
+	"api": {
+		"ipaddress": "127.0.0.1",
+		"port": 3000
+	},
+	"kafka": {
+		"address" : "localhost:9092"
+	},
+	"rabbit": {
+
+	},
+	"db": {
+
+	}
 }
