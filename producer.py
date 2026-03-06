@@ -10,13 +10,17 @@ producer = KafkaProducer(
 )
 data = []
 for x in range(0,20):
-    data.append({"label": "test", "fields": {"test": x}})
+    data.append({"label": "Department", "fields": {"code": str(x), "department_id": f'00{str(x)}',
+                                             "head_name": "gluz", "name": "gluz_research",
+                                             "org_id": "6767"
+                                             }})
 
 print(data)
 # Send to topic
 for item in data:
     producer.send('test-topic', value=item)
-    print(f"test number {item['fields']['test']} has been sent")
+    print(f"test number {item['fields']['code']} has been sent")
+    print(item)
     time.sleep(random.randint(0,3))
 
 

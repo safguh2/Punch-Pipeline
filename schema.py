@@ -25,11 +25,13 @@ class SchemaValidator:
 
 
     def verify(self, object:dict):
-        if "label" not in object:
+        if "label" not in object or "fields" not in object:
             print("schema label in object doesn't exists")
             return False
 
         label = object['label']
+        print(label)
+        print(self.schemas)
         if label not in self.schemas:
             print("schema label doesn't exist in current schemas")
             return False

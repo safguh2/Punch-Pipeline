@@ -1,0 +1,58 @@
+{"nodeLabels": [{"label": "Course",
+            "properties": [
+                {
+                    "name": "academic_term",
+                    "type": "STRING"
+                },
+                {
+                    "name": "code",
+                    "type": "STRING"
+                },
+                {
+                    "name": "course_id",
+                    "type": "STRING"
+                },
+                {
+                    "name": "credits",
+                    "type": "INTEGER"
+                },
+                {
+                    "name": "level",
+                    "type": "STRING"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING"
+                },
+                {
+                    "name": "org_id",
+                    "type": "STRING"
+                }
+            ],
+            "totalProperties": 7
+        },
+        {
+            "label": "Department",
+            "properties": [
+                {
+                    "name": "code",
+                    "type": "STRING"
+                },
+                {
+                    "name": "department_id",
+                    "type": "STRING"
+                },
+                {
+                    "name": "head_name",
+                    "type": "STRING"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING"
+                },
+                {
+                    "name": "org_id",
+                    "type": "STRING"
+                }
+            ]
+        }]}
