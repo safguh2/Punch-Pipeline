@@ -14,7 +14,7 @@ class SchemaValidator:
         while True:
             print("loading new schema")
             self.load_schemas()
-            await asyncio.sleep(5)
+            await asyncio.sleep(120)
 
 
     def load_schemas(self):

@@ -6,8 +6,8 @@
 	"kafka": {
 		"address" : "localhost:9092"
 	},
-	"rabbit": {
-
+	"rabbitmq": {
+		"address": "amqp://guest:guest@localhost:5672/"
 	},
 	"db": {
 

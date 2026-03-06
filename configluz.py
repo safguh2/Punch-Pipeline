@@ -7,5 +7,6 @@ def loadConfig():
 
         api = Api(config["api"]["ipaddress"], config["api"]["port"])
         kafka_address = config["kafka"]["address"]
+        rabbitmq_address = config["rabbitmq"]["address"]
 
-        return api, kafka_address
+        return api, kafka_address, rabbitmq_address

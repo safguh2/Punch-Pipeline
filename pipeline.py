@@ -15,9 +15,9 @@ async def consume_data(queue, verifier, api):
 
 
 async def main():
-    api, kafka_address = configluz.loadConfig()
+    api, kafka_address, rabbitmq_address = configluz.loadConfig()
     verifier = schema.SchemaValidator(api)
-    queue: asyncio.Queue = start_stream(kafka_address)
+    queue: asyncio.Queue = start_stream(kafka_address, rabbitmq_address)
     await consume_data(queue, verifier, api)
 
 
