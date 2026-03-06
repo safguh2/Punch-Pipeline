@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d9e5534-8b2a-4974-8db7-a647ad925eed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/producers_mock/RabbitMQProducer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/producers_mock/KafkaProducer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/producers_mock/RabbitMQProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/producers_mock/RabbitMQProducer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
