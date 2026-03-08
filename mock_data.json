@@ -55,4 +55,19 @@
                     "type": "STRING"
                 }
             ]
-        }]}
+        },
+        {
+            "label": "relation",
+            "properties": [
+                {
+                    "name": "test",
+                    "type": "STRING"
+                },
+                {
+                    "name": "id",
+                    "type": "INTEGER"
+                }
+            ]
+        }
+    ]
+}

@@ -12,11 +12,12 @@ channel = connection.channel()
 channel.queue_declare(queue="test")
 
 data = []
-for x in range(100,120):
+for x in range(100,105):
     data.append({"label": "Department", "fields": {"code": str(x), "department_id": f'00{str(x)}',
                                              "head_name": "gluz", "name": "gluz_research",
                                              "org_id": "6767"
                                              }})
+data.append({"label": "relation", "fields":{"test": "is a test", "id": 6666}})
 print(data)
 # Send to topic
 for item in data:

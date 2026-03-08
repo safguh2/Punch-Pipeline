@@ -4,7 +4,7 @@ from pydantic import ValidationError, create_model, ConfigDict, BaseModel
 
 class DynamicBase(BaseModel):
     model_config = ConfigDict(
-        extra="forbid",   # forbid additional fields
+        extra="forbid",  # forbid additional fields
     )
 
 
@@ -15,13 +15,11 @@ class SchemaValidator:
 
         asyncio.create_task(self.schema_auto_loader())
 
-
     async def schema_auto_loader(self):
         while True:
             print("loading new schema")
             self.load_schemas()
             await asyncio.sleep(120)
-
 
     def load_schemas(self):
         self.schemas = dict()
@@ -29,8 +27,7 @@ class SchemaValidator:
             self.schemas[schema["label"]] = create_model(schema['label'], __base__=DynamicBase, **schema["fields"])
             print(schema)
 
-
-    def verify(self, object:dict):
+    def verify(self, object: dict):
         if "label" not in object or "fields" not in object:
             print("schema label in object doesn't exists")
             return False

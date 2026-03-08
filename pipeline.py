@@ -49,7 +49,7 @@ async def reflow(queue, obj):
 
 
 async def main():
-    api, kafka_address, rabbitmq_address = configluz.loadConfig()
+    api, kafka_address, rabbitmq_address = configluz.load_config()
     verifier = schema.SchemaValidator(api)
     queue: asyncio.Queue = start_stream(kafka_address, rabbitmq_address)
     await consume_data(queue, verifier, api)
