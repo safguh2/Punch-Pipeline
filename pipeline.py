@@ -9,15 +9,15 @@ import configluz
 from sources import start_stream
 
 
-async def consume_data(queue, verifier, api):
+async def consume_data(queue, verifier, communicator):
     while True:
         try:
             data = await queue.get()
             obj = ast.literal_eval(data.decode('utf-8'))
             if 'count' in obj and obj["count"] <= 3:
-                process(verifier, api, obj['data'])
+                process(verifier, communicator, obj['data'])
             elif 'count' not in obj:
-                process(verifier, api, obj)
+                process(verifier, communicator, obj)
             else:
                 print("maximum retries reached")
                 raise SyntaxError
@@ -35,9 +35,9 @@ async def consume_data(queue, verifier, api):
             queue.task_done()
 
 
-def process(verifier, api, obj):
+def process(verifier, communicator, obj):
     if (verifier.verify(obj)):
-        api.send(obj)
+        communicator.send(obj)
 
 
 async def reflow(queue, obj):
@@ -49,10 +49,10 @@ async def reflow(queue, obj):
 
 
 async def main():
-    api, kafka_address, rabbitmq_address = configluz.load_config()
-    verifier = schema.SchemaValidator(api)
+    communicator, kafka_address, rabbitmq_address = configluz.load_config()
+    verifier = schema.SchemaValidator(communicator.neo)
     queue: asyncio.Queue = start_stream(kafka_address, rabbitmq_address)
-    await consume_data(queue, verifier, api)
+    await consume_data(queue, verifier, communicator)
 
 
 if __name__ == "__main__":
