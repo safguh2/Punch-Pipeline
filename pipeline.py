@@ -42,7 +42,7 @@ def process(verifier, communicator, obj):
 
 async def reflow(queue, obj):
     if 'count' in obj:
-        obj['count'] = obj['count']+1
+        obj['count'] += 1
     else:
         obj = {'count': 1, 'data': obj}
     await queue.put(str(obj).encode())
