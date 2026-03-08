@@ -1,5 +1,11 @@
 import asyncio
-from pydantic import ValidationError, create_model
+from pydantic import ValidationError, create_model, ConfigDict, BaseModel
+
+
+class DynamicBase(BaseModel):
+    model_config = ConfigDict(
+        extra="forbid",   # forbid additional fields
+    )
 
 
 class SchemaValidator:
@@ -20,7 +26,7 @@ class SchemaValidator:
     def load_schemas(self):
         self.schemas = dict()
         for schema in self.api.get_schemas():
-            self.schemas[schema["label"]] = create_model(schema['label'], **schema["fields"])
+            self.schemas[schema["label"]] = create_model(schema['label'], __base__=DynamicBase, **schema["fields"])
             print(schema)
 
 
