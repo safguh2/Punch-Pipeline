@@ -9,6 +9,7 @@ class Api:
         self.index = 0
 
     def send(self, obj:dict):
+        raise requests.exceptions.RequestException
         print(f'object has been sent: {str(obj)}')
 
     def get_schemas(self):

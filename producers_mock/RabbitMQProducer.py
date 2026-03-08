@@ -17,7 +17,6 @@ for x in range(100,120):
                                              "head_name": "gluz", "name": "gluz_research",
                                              "org_id": "6767"
                                              }})
-
 print(data)
 # Send to topic
 for item in data:
