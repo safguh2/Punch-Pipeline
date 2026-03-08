@@ -3,23 +3,25 @@ import ast
 import requests
 
 
-class Api:
-    def __init__(self, ipaddress, port):
+class Neo4jApi:
+    def __init__(self, ipaddress: str, port: int, relation_label: str):
         self.url = f"http://{ipaddress}:{str(port)}/api"
-        self.index = 0
+        self.relation_label = relation_label
 
-    def send(self, obj:dict):
-        raise requests.exceptions.RequestException
-        print(f'object has been sent: {str(obj)}')
+    def send(self, obj: dict):
+        if obj['label'] == self.relation_label:
+            print(f'relation has been sent to neo4j DB {str(obj)}')
+        else:
+            print(f'object has been sent to neo4j DB {str(obj)}')
 
     def get_schemas(self):
-        #response = requests.get(f'{self.url}/schema')
+        # response = requests.get(f'{self.url}/schema')
         response = get_mock_data()
-        # digest the response
         return parse_response(response)
 
 
 api_type_dictionary = {"STRING": str, "INTEGER": int, "FLOAT": int, "BOOLEAN": bool}
+
 
 def parse_response(response):
     raw = ast.literal_eval(response.decode('utf-8'))['nodeLabels']
@@ -33,6 +35,7 @@ def parse_response(response):
         schemas.append({"label": label, "fields": fields})
 
     return schemas
+
 
 def parse_fields(raw_fields):
     fields = dict()
