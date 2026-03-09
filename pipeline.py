@@ -45,9 +45,9 @@ async def reflow(queue, obj):
 
 
 async def main():
-    communicator, kafka_address, rabbitmq_address, workers_amount = configluz.load_config()
+    communicator, kafka_address, rabbitmq_address, workers_amount, external_db = configluz.load_config()
     verifier = schema.SchemaValidator(communicator.neo)
-    queue: asyncio.Queue = start_stream(kafka_address, rabbitmq_address)
+    queue: asyncio.Queue = start_stream(kafka_address, rabbitmq_address, external_db)
     workers = [asyncio.create_task(consume_data(queue, verifier, communicator)) for _ in range(workers_amount)]
     await asyncio.gather(*workers)
 

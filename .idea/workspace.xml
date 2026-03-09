@@ -10,8 +10,7 @@
       <change beforePath="$PROJECT_DIR$/configluz.py" beforeDir="false" afterPath="$PROJECT_DIR$/configluz.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configuration.json" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/producers_mock/KafkaProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/producers_mock/KafkaProducer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/producers_mock/RabbitMQProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/producers_mock/RabbitMQProducer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sources.py" beforeDir="false" afterPath="$PROJECT_DIR$/sources.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +49,7 @@
       <recent name="C:\Code\Punch-Pipeline\producers_mock" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.KafkaProducer (1)">
+  <component name="RunManager" selected="Python.pipeline">
     <configuration name="KafkaProducer (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Punch-Pipeline" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -158,10 +157,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.KafkaProducer (1)" />
-        <item itemvalue="Python.RabbitMQProducer" />
         <item itemvalue="Python.pipeline" />
         <item itemvalue="Python.sources" />
+        <item itemvalue="Python.KafkaProducer (1)" />
+        <item itemvalue="Python.RabbitMQProducer" />
         <item itemvalue="Python.KafkaProducer" />
       </list>
     </recent_temporary>

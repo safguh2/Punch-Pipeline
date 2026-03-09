@@ -1,6 +1,7 @@
 import asyncio
 from aiokafka import AIOKafkaConsumer
 import aio_pika
+import DBSource
 
 queue: asyncio.Queue = asyncio.Queue()
 async def kafka_handler(kafka_address):
@@ -32,11 +33,20 @@ async def rabbitmq_handler(rabbitmq_address):
                     await queue.put(message.body)
 
 
-async def db_handler:
+def create_db_handlers(db_list):
+    for db in db_list:
+        try:
+            if db['type'] != 'postgres':
+                print("db not supported")
+            else:
+                db_handler = DBSource.DatabaseSource(queue, db['dsn'])
+                asyncio.create_task(db_handler.run())
+        except:
+            print("error in db handlers")
 
 
-
-def start_stream(kafka_address, rabbitmq_address):
+def start_stream(kafka_address, rabbitmq_address, external_db):
     asyncio.create_task(kafka_handler(kafka_address))
     asyncio.create_task(rabbitmq_handler(rabbitmq_address))
+    create_db_handlers(external_db)
     return queue

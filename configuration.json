@@ -13,6 +13,12 @@
 		"ipaddress": "127.0.0.1",
 		"port": 6666
 	},
+	"external_db": [
+		{
+			"dsn": "postgresql://testuser:testpass@localhost:5432/testdb",
+			"type": "postgres"
+		}
+	],
 	"relation_label": "relation",
 	"worker_amount": 3
 }

@@ -19,4 +19,6 @@ def load_config():
 
         workers_amount = config["worker_amount"]
 
-        return communicator, kafka_address, rabbitmq_address, workers_amount
+        external_dbs = config["external_db"]
+
+        return communicator, kafka_address, rabbitmq_address, workers_amount, external_dbs

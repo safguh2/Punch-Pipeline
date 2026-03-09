@@ -12,3 +12,31 @@ docker run -d --name kafka -p 9092:9092 -e KAFKA_PROCESS_ROLES=broker,controller
 ```
 docker run -d --hostname rabbitmq --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
+
+* run postgresDB container
+```
+docker run -d --name postgres-test -e POSTGRES_USER=testuser -e POSTGRES_PASSWORD=testpass -e POSTGRES_DB=testdb -p 5432:5432 postgres:16
+```
+create a test table
+```sql
+-- example
+CREATE TABLE "Course" (
+    academic_term TEXT,
+    code TEXT,
+    course_id TEXT PRIMARY KEY,
+    credits INTEGER,
+    level TEXT,
+    name TEXT,
+    org_id TEXT
+);
+```
+insert items
+```sql
+-- example
+INSERT INTO "Course" (academic_term, code, course_id, credits, level, name, org_id) VALUES
+('2025A', 'CS101', 'C-1001', 4, 'Undergraduate', 'Introduction to Computer Science', 'ORG-01'),
+('2025A', 'CS102', 'C-1002', 3, 'Undergraduate', 'Data Structures', 'ORG-01'),
+('2025B', 'CS201', 'C-2001', 4, 'Undergraduate', 'Algorithms', 'ORG-01'),
+('2025B', 'CS301', 'C-3001', 3, 'Graduate', 'Distributed Systems', 'ORG-02'),
+('2026A', 'CS401', 'C-4001', 3, 'Graduate', 'Machine Learning', 'ORG-02');
+```
