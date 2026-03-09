@@ -25,7 +25,7 @@ async def consume_data(queue, verifier, communicator):
             print(e.response)
             await reflow(queue, obj)
         except BaseException as e:
-            print("some error accord")
+            print(e)
 
         finally:
             queue.task_done()
@@ -34,7 +34,6 @@ async def consume_data(queue, verifier, communicator):
 def process(verifier, communicator, obj):
     if (verifier.verify(obj)):
         communicator.send(obj)
-
 
 async def reflow(queue, obj):
     if 'count' in obj:

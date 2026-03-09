@@ -22,15 +22,7 @@
 		"label": "relationShip",
 		"properties": [
 			{
-				"name": "sourceType",
-				"type": "String"
-			},
-			{
 				"name": "sourceId",
-				"type": "String"
-			},
-			{
-				"name": "targetType",
 				"type": "String"
 			},
 			{
