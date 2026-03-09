@@ -32,6 +32,10 @@ async def rabbitmq_handler(rabbitmq_address):
                     await queue.put(message.body)
 
 
+async def db_handler:
+
+
+
 def start_stream(kafka_address, rabbitmq_address):
     asyncio.create_task(kafka_handler(kafka_address))
     asyncio.create_task(rabbitmq_handler(rabbitmq_address))

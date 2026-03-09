@@ -17,4 +17,6 @@ def load_config():
         kafka_address = config["kafka"]["address"]
         rabbitmq_address = config["rabbitmq"]["address"]
 
-        return communicator, kafka_address, rabbitmq_address
+        workers_amount = config["worker_amount"]
+
+        return communicator, kafka_address, rabbitmq_address, workers_amount

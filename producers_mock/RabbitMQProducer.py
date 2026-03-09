@@ -12,7 +12,7 @@ channel = connection.channel()
 channel.queue_declare(queue="test")
 
 data = []
-for x in range(100,105):
+for x in range(100,1000):
     data.append({"label": "Department", "fields": {"code": str(x), "department_id": f'00{str(x)}',
                                              "head_name": "gluz", "name": "gluz_research",
                                              "org_id": "6767"

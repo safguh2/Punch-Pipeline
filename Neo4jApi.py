@@ -15,8 +15,8 @@ class Neo4jApi:
             print(f'object has been sent to neo4j DB {str(obj)}')
 
     def get_schemas(self):
-        # response = requests.get(f'{self.url}/schema')
-        response = get_mock_data()
+        response = requests.get(f'{self.url}/schema')
+        response.
         return parse_response(response)
 
 

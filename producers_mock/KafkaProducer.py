@@ -9,7 +9,7 @@ producer = KafkaProducer(
     value_serializer=lambda v: json.dumps(v).encode('utf-8')  # <-- serialize to JSON bytes
 )
 data = []
-for x in range(0,20):
+for x in range(0,1000):
     data.append({"label": "Department", "fields": {"code": str(x), "department_id": f'00{str(x)}',
                                              "head_name": "gluz", "name": "gluz_research",
                                              "org_id": "6767"

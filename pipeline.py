@@ -22,10 +22,6 @@ async def consume_data(queue, verifier, communicator):
                 print("maximum retries reached")
                 raise SyntaxError
 
-        except ValidationError as e:
-            print("invalid schema")
-        except SyntaxError as e:
-            print("invalid data")
         except RequestException as e:
             await reflow(queue, obj)
         except BaseException as e:
@@ -49,10 +45,11 @@ async def reflow(queue, obj):
 
 
 async def main():
-    communicator, kafka_address, rabbitmq_address = configluz.load_config()
+    communicator, kafka_address, rabbitmq_address, workers_amount = configluz.load_config()
     verifier = schema.SchemaValidator(communicator.neo)
     queue: asyncio.Queue = start_stream(kafka_address, rabbitmq_address)
-    await consume_data(queue, verifier, communicator)
+    workers = [asyncio.create_task(consume_data(queue, verifier, communicator)) for _ in range(workers_amount)]
+    await asyncio.gather(*workers)
 
 
 if __name__ == "__main__":

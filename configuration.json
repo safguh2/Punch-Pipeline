@@ -13,5 +13,6 @@
 		"ipaddress": "127.0.0.1",
 		"port": 6666
 	},
-	"relation_label": "relation"
+	"relation_label": "relation",
+	"worker_amount": 3
 }

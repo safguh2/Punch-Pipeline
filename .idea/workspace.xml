@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2d9e5534-8b2a-4974-8db7-a647ad925eed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neo4jApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Neo4jApi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configluz.py" beforeDir="false" afterPath="$PROJECT_DIR$/configluz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration.json" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/producers_mock/KafkaProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/producers_mock/KafkaProducer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/producers_mock/RabbitMQProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/producers_mock/RabbitMQProducer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources.py" beforeDir="false" afterPath="$PROJECT_DIR$/sources.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,20 +37,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "api__interface",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;workers&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Code\Punch-Pipeline\producers_mock" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.RabbitMQProducer">
+  <component name="RunManager" selected="Python.KafkaProducer (1)">
     <configuration name="KafkaProducer (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Punch-Pipeline" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,9 +158,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.KafkaProducer (1)" />
         <item itemvalue="Python.RabbitMQProducer" />
         <item itemvalue="Python.pipeline" />
-        <item itemvalue="Python.KafkaProducer (1)" />
         <item itemvalue="Python.sources" />
         <item itemvalue="Python.KafkaProducer" />
       </list>
