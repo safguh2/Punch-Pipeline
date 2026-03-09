@@ -42,7 +42,7 @@ class DatabaseSource:
                     for row in rows:
                         message = {
                             "label": table,
-                            "fields": dict(row)
+                            "properties": dict(row)
                         }
 
                         await self.queue.put(str(message).encode())

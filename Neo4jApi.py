@@ -1,47 +1,52 @@
 import ast
-
+import json
 import requests
 
 
 class Neo4jApi:
-    def __init__(self, ipaddress: str, port: int, relation_label: str):
-        self.url = f"http://{ipaddress}:{str(port)}/api"
-        self.relation_label = relation_label
+    def __init__(self, url: str, relation_schema: dict):
+        self.url = url
+        self.relation_schema = relation_schema
 
     def send(self, obj: dict):
-        if obj['label'] == self.relation_label:
+        if obj['label'] == self.relation_schema["label"]:
+            res = requests.post(f'{self.url}/relationships')
             print(f'relation has been sent to neo4j DB {str(obj)}')
         else:
+            res = requests.post(f'{self.url}/dynamic/smart-create', data=str(obj))
             print(f'object has been sent to neo4j DB {str(obj)}')
+        print(res.status_code)
+
 
     def get_schemas(self):
-        # response = requests.get(f'{self.url}/schema')
+        #response = requests.get(f'{self.url}/schema').text
         response = get_mock_data()
-        return parse_response(response)
+        raw = json.loads(response)
+        raw["nodeLabels"].append(self.relation_schema)
+        return parse_response(raw["nodeLabels"])
 
 
-api_type_dictionary = {"STRING": str, "INTEGER": int, "FLOAT": int, "BOOLEAN": bool}
+api_type_dictionary = {"string": str, "integer": int, "float": int, "boolean": bool, "date": str, "dict": dict}
 
 
 def parse_response(response):
-    raw = ast.literal_eval(response.decode('utf-8'))['nodeLabels']
     schemas = list()
-
-    for schema in raw:
+    print(response)
+    for schema in response:
         label = schema['label']
 
         fields = parse_fields(schema['properties'])
 
-        schemas.append({"label": label, "fields": fields})
+        schemas.append({"label": label, "properties": fields})
 
     return schemas
 
 
 def parse_fields(raw_fields):
     fields = dict()
-
+    print(raw_fields)
     for field in raw_fields:
-        type = api_type_dictionary[field["type"]]
+        type = api_type_dictionary[field["type"].lower()]
         fields[field['name']] = (type, ...)
 
     return fields
@@ -50,4 +55,4 @@ def parse_fields(raw_fields):
 def get_mock_data():
     with open("mock_data.json") as data:
         binary = data.read()
-        return binary.encode()
+        return binary

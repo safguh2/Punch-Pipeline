@@ -1,7 +1,6 @@
 {
 	"api": {
-		"ipaddress": "127.0.0.1",
-		"port": 3000
+		"url": "http://idiosyncratically-spasmodic-cherri.ngrok-free.dev/api"
 	},
 	"kafka": {
 		"address" : "localhost:9092"
@@ -19,6 +18,38 @@
 			"type": "postgres"
 		}
 	],
-	"relation_label": "relation",
+	"relation_schema": {
+		"label": "relationShip",
+		"properties": [
+			{
+				"name": "sourceType",
+				"type": "String"
+			},
+			{
+				"name": "sourceId",
+				"type": "String"
+			},
+			{
+				"name": "targetType",
+				"type": "String"
+			},
+			{
+				"name": "targetId",
+				"type": "String"
+			},
+			{
+				"name": "relationshipType",
+				"type": "String"
+			},
+			{
+				"name": "tenantId",
+				"type": "String"
+			},
+			{
+				"name": "properties",
+				"type": "Dict"
+			}
+		]
+	},
 	"worker_amount": 3
 }

@@ -1,73 +1,956 @@
-{"nodeLabels": [{"label": "Course",
-            "properties": [
-                {
-                    "name": "academic_term",
-                    "type": "STRING"
-                },
-                {
-                    "name": "code",
-                    "type": "STRING"
-                },
-                {
-                    "name": "course_id",
-                    "type": "STRING"
-                },
-                {
-                    "name": "credits",
-                    "type": "INTEGER"
-                },
-                {
-                    "name": "level",
-                    "type": "STRING"
-                },
-                {
-                    "name": "name",
-                    "type": "STRING"
-                },
-                {
-                    "name": "org_id",
-                    "type": "STRING"
-                }
-            ],
-            "totalProperties": 7
+{
+  "nodeLabels": [
+    {
+      "label": "Course",
+      "properties": [
+        {
+          "name": "entity_id",
+          "type": "String"
         },
         {
-            "label": "Department",
-            "properties": [
-                {
-                    "name": "code",
-                    "type": "STRING"
-                },
-                {
-                    "name": "department_id",
-                    "type": "STRING"
-                },
-                {
-                    "name": "head_name",
-                    "type": "STRING"
-                },
-                {
-                    "name": "name",
-                    "type": "STRING"
-                },
-                {
-                    "name": "org_id",
-                    "type": "STRING"
-                }
-            ]
+          "name": "name",
+          "type": "String"
         },
         {
-            "label": "relation",
-            "properties": [
-                {
-                    "name": "test",
-                    "type": "STRING"
-                },
-                {
-                    "name": "id",
-                    "type": "INTEGER"
-                }
-            ]
+          "name": "academic_term",
+          "type": "String"
+        },
+        {
+          "name": "code",
+          "type": "String"
+        },
+        {
+          "name": "credits",
+          "type": "Integer"
+        },
+        {
+          "name": "description",
+          "type": "String"
+        },
+        {
+          "name": "level",
+          "type": "String"
+        },
+        {
+          "name": "org_id",
+          "type": "String"
         }
-    ]
+      ],
+      "totalProperties": 8
+    },
+    {
+      "label": "Department",
+      "properties": [
+        {
+          "name": "entity_id",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "code",
+          "type": "String"
+        },
+        {
+          "name": "org_id",
+          "type": "String"
+        }
+      ],
+      "totalProperties": 4
+    },
+    {
+      "label": "Education",
+      "properties": [
+        {
+          "name": "entity_id",
+          "type": "String"
+        },
+        {
+          "name": "education_type",
+          "type": "String"
+        },
+        {
+          "name": "field_of_study",
+          "type": "String"
+        },
+        {
+          "name": "title",
+          "type": "String"
+        }
+      ],
+      "totalProperties": 4
+    },
+    {
+      "label": "Employee",
+      "properties": [
+        {
+          "name": "employee_number",
+          "type": "String"
+        },
+        {
+          "name": "contract_type",
+          "type": "String"
+        },
+        {
+          "name": "salary_band",
+          "type": "String"
+        },
+        {
+          "name": "department",
+          "type": "String"
+        },
+        {
+          "name": "hire_date",
+          "type": "String"
+        }
+      ],
+      "totalProperties": 5
+    },
+    {
+      "label": "Entity",
+      "properties": [
+        {
+          "name": "academic_term",
+          "type": "STRING"
+        },
+        {
+          "name": "category",
+          "type": "STRING"
+        },
+        {
+          "name": "code",
+          "type": "STRING"
+        },
+        {
+          "name": "contract_type",
+          "type": "STRING"
+        },
+        {
+          "name": "credits",
+          "type": "INTEGER"
+        },
+        {
+          "name": "department",
+          "type": "STRING"
+        },
+        {
+          "name": "education_type",
+          "type": "STRING"
+        },
+        {
+          "name": "email",
+          "type": "STRING"
+        },
+        {
+          "name": "employee_number",
+          "type": "STRING"
+        },
+        {
+          "name": "end_date",
+          "type": "STRING"
+        },
+        {
+          "name": "enrollment_status",
+          "type": "STRING"
+        },
+        {
+          "name": "enrollment_year",
+          "type": "INTEGER"
+        },
+        {
+          "name": "entity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "field_of_study",
+          "type": "STRING"
+        },
+        {
+          "name": "first_name",
+          "type": "STRING"
+        },
+        {
+          "name": "gpa",
+          "type": "FLOAT"
+        },
+        {
+          "name": "grade",
+          "type": "STRING"
+        },
+        {
+          "name": "h_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "head_name",
+          "type": "STRING"
+        },
+        {
+          "name": "hire_date",
+          "type": "STRING"
+        },
+        {
+          "name": "industry",
+          "type": "STRING"
+        },
+        {
+          "name": "last_name",
+          "type": "STRING"
+        },
+        {
+          "name": "latitude",
+          "type": "FLOAT"
+        },
+        {
+          "name": "level",
+          "type": "STRING"
+        },
+        {
+          "name": "location_type",
+          "type": "STRING"
+        },
+        {
+          "name": "longitude",
+          "type": "FLOAT"
+        },
+        {
+          "name": "marital_status",
+          "type": "STRING"
+        },
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "nationality",
+          "type": "STRING"
+        },
+        {
+          "name": "orcid_id",
+          "type": "STRING"
+        },
+        {
+          "name": "org_id",
+          "type": "STRING"
+        },
+        {
+          "name": "organization_type",
+          "type": "STRING"
+        },
+        {
+          "name": "population",
+          "type": "INTEGER"
+        },
+        {
+          "name": "registration_date",
+          "type": "STRING"
+        },
+        {
+          "name": "research_field",
+          "type": "STRING"
+        },
+        {
+          "name": "researcher_type",
+          "type": "STRING"
+        },
+        {
+          "name": "residency_type",
+          "type": "STRING"
+        },
+        {
+          "name": "resident_id",
+          "type": "STRING"
+        },
+        {
+          "name": "salary_band",
+          "type": "STRING"
+        },
+        {
+          "name": "start_date",
+          "type": "STRING"
+        },
+        {
+          "name": "status",
+          "type": "STRING"
+        },
+        {
+          "name": "student_id",
+          "type": "STRING"
+        },
+        {
+          "name": "study_mode",
+          "type": "STRING"
+        },
+        {
+          "name": "title",
+          "type": "STRING"
+        },
+        {
+          "name": "website",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 45
+    },
+    {
+      "label": "EntitySchema",
+      "properties": [
+        {
+          "name": "key",
+          "type": "STRING"
+        },
+        {
+          "name": "label",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 2
+    },
+    {
+      "label": "Location",
+      "properties": [
+        {
+          "name": "entity_id",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "latitude",
+          "type": "Float"
+        },
+        {
+          "name": "location_type",
+          "type": "String"
+        },
+        {
+          "name": "longitude",
+          "type": "Float"
+        },
+        {
+          "name": "population",
+          "type": "Integer"
+        },
+        {
+          "name": "postal_code",
+          "type": "String"
+        }
+      ],
+      "totalProperties": 7
+    },
+    {
+      "label": "Organization",
+      "properties": [
+        {
+          "name": "entity_id",
+          "type": "String"
+        },
+        {
+          "name": "industry",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "organization_type",
+          "type": "String"
+        }
+      ],
+      "totalProperties": 4
+    },
+    {
+      "label": "Person",
+      "properties": [
+        {
+          "name": "entity_id",
+          "type": "String"
+        },
+        {
+          "name": "birth_date",
+          "type": "Date"
+        },
+        {
+          "name": "email",
+          "type": "String"
+        },
+        {
+          "name": "first_name",
+          "type": "String"
+        },
+        {
+          "name": "last_name",
+          "type": "String"
+        },
+        {
+          "name": "nationality",
+          "type": "String"
+        },
+        {
+          "name": "phone",
+          "type": "String"
+        },
+        {
+          "name": "status",
+          "type": "String"
+        }
+      ],
+      "totalProperties": 8
+    },
+    {
+      "label": "PromotionField",
+      "properties": [
+        {
+          "name": "name",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 1
+    },
+    {
+      "label": "PromotionSubtype",
+      "properties": [
+        {
+          "name": "base_label",
+          "type": "STRING"
+        },
+        {
+          "name": "key",
+          "type": "STRING"
+        },
+        {
+          "name": "label",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 3
+    },
+    {
+      "label": "Researcher",
+      "properties": [
+        {
+          "name": "orcid_id",
+          "type": "String"
+        },
+        {
+          "name": "research_field",
+          "type": "String"
+        },
+        {
+          "name": "h_index",
+          "type": "String"
+        },
+        {
+          "name": "researcher_type",
+          "type": "String"
+        }
+      ],
+      "totalProperties": 4
+    },
+    {
+      "label": "Resident",
+      "properties": [
+        {
+          "name": "resident_id",
+          "type": "String"
+        },
+        {
+          "name": "registration_date",
+          "type": "String"
+        },
+        {
+          "name": "residency_type",
+          "type": "String"
+        },
+        {
+          "name": "marital_status",
+          "type": "String"
+        }
+      ],
+      "totalProperties": 4
+    },
+    {
+      "label": "SchemaProperty",
+      "properties": [
+        {
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "name": "type",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 2
+    },
+    {
+      "label": "Skill",
+      "properties": [
+        {
+          "name": "entity_id",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "category",
+          "type": "String"
+        }
+      ],
+      "totalProperties": 3
+    },
+    {
+      "label": "Student",
+      "properties": [
+        {
+          "name": "student_id",
+          "type": "String"
+        },
+        {
+          "name": "gpa",
+          "type": "String"
+        },
+        {
+          "name": "enrollment_year",
+          "type": "String"
+        },
+        {
+          "name": "enrollment_status",
+          "type": "String"
+        },
+        {
+          "name": "study_mode",
+          "type": "String"
+        }
+      ],
+      "totalProperties": 5
+    }
+  ],
+  "relationshipTypes": [
+    {
+      "relationshipType": "AFFILIATED_WITH",
+      "properties": [
+        {
+          "name": "affiliation_type",
+          "type": "STRING"
+        },
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "entity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 4
+    },
+    {
+      "relationshipType": "BELONGS_TO",
+      "properties": [
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 2
+    },
+    {
+      "relationshipType": "COMPLETED",
+      "properties": [
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "entity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 3
+    },
+    {
+      "relationshipType": "ENROLLED_IN",
+      "properties": [
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "entity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "program",
+          "type": "STRING"
+        },
+        {
+          "name": "start_date",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 5
+    },
+    {
+      "relationshipType": "HAS_ADVISOR",
+      "properties": [
+        {
+          "name": "advisor_id",
+          "type": "STRING"
+        },
+        {
+          "name": "advisor_role",
+          "type": "STRING"
+        },
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 4
+    },
+    {
+      "relationshipType": "HAS_FIELD",
+      "properties": [],
+      "totalProperties": 0
+    },
+    {
+      "relationshipType": "HAS_PROPERTY",
+      "properties": [],
+      "totalProperties": 0
+    },
+    {
+      "relationshipType": "HAS_SKILL",
+      "properties": [
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "entity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "proficiency_level",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 4
+    },
+    {
+      "relationshipType": "LIVES_IN",
+      "properties": [
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "entity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "residence_type",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 4
+    },
+    {
+      "relationshipType": "OFFERED_BY",
+      "properties": [
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 2
+    },
+    {
+      "relationshipType": "PROVIDED_BY",
+      "properties": [
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 2
+    },
+    {
+      "relationshipType": "REGISTERED_AT",
+      "properties": [
+        {
+          "name": "address_type",
+          "type": "STRING"
+        },
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "entity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "since",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 5
+    },
+    {
+      "relationshipType": "REGISTERED_FOR",
+      "properties": [
+        {
+          "name": "academic_term",
+          "type": "STRING"
+        },
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "entity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "grade",
+          "type": "STRING"
+        },
+        {
+          "name": "status",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 6
+    },
+    {
+      "relationshipType": "REPORTS_TO",
+      "properties": [
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "reporting_type",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 3
+    },
+    {
+      "relationshipType": "REQUIRES_SKILL",
+      "properties": [
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "entity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "requirement_level",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 4
+    },
+    {
+      "relationshipType": "WORKS_AT",
+      "properties": [
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "entity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "job_title",
+          "type": "STRING"
+        },
+        {
+          "name": "start_date",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 5
+    },
+    {
+      "relationshipType": "WORKS_IN",
+      "properties": [
+        {
+          "name": "created_at",
+          "type": "STRING"
+        },
+        {
+          "name": "entity_id",
+          "type": "STRING"
+        },
+        {
+          "name": "role",
+          "type": "STRING"
+        },
+        {
+          "name": "tenant_id",
+          "type": "STRING"
+        }
+      ],
+      "totalProperties": 4
+    }
+  ],
+  "constraints": [
+    {
+      "name": "course_entity_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Course"
+      ],
+      "properties": [
+        "entity_id"
+      ]
+    },
+    {
+      "name": "department_entity_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Department"
+      ],
+      "properties": [
+        "entity_id"
+      ]
+    },
+    {
+      "name": "education_entity_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Education"
+      ],
+      "properties": [
+        "entity_id"
+      ]
+    },
+    {
+      "name": "entity_entity_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Entity"
+      ],
+      "properties": [
+        "entity_id"
+      ]
+    },
+    {
+      "name": "location_entity_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Location"
+      ],
+      "properties": [
+        "entity_id"
+      ]
+    },
+    {
+      "name": "organization_entity_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Organization"
+      ],
+      "properties": [
+        "entity_id"
+      ]
+    },
+    {
+      "name": "person_entity_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Person"
+      ],
+      "properties": [
+        "entity_id"
+      ]
+    },
+    {
+      "name": "skill_entity_id",
+      "type": "UNIQUENESS",
+      "entityType": "NODE",
+      "labelsOrTypes": [
+        "Skill"
+      ],
+      "properties": [
+        "entity_id"
+      ]
+    }
+  ]
 }

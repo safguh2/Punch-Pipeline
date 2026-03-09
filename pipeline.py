@@ -8,7 +8,6 @@ import ast
 import configluz
 from sources import start_stream
 
-
 async def consume_data(queue, verifier, communicator):
     while True:
         try:
@@ -23,6 +22,7 @@ async def consume_data(queue, verifier, communicator):
                 raise SyntaxError
 
         except RequestException as e:
+            print(e.response)
             await reflow(queue, obj)
         except BaseException as e:
             print("some error accord")

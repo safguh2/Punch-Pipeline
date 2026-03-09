@@ -8,9 +8,9 @@ def load_config():
     with open("configuration.json") as configuration_file:
         config = json.load(configuration_file)
 
-        relation_label = config["relation_label"]
+        relation_schema = config["relation_schema"]
 
-        neo_api = Neo4jApi(config["api"]["ipaddress"], config["api"]["port"], relation_label)
+        neo_api = Neo4jApi(config["api"]["url"], relation_schema)
         sot_api = SotApi(config['sot']['ipaddress'], config['sot']['port'])
         communicator = Communication(neo_api, sot_api)
 
