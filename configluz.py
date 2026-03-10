@@ -1,6 +1,6 @@
-from Neo4jApi import Neo4jApi
-from SotApi import SotApi
-from Communication import Communication
+from Communication.Neo4jApi import Neo4jApi
+from Communication.SotApi import SotApi
+from Communication.Communication import Communication
 import json
 
 

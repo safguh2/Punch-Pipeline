@@ -3,5 +3,6 @@ class SotApi:
         self.ipaddress = ipaddress
         self.port = port
 
-    def send(self, obj:dict):
+    def send(self, obj: list):
+        x.
         print("data sent to SOT DB")

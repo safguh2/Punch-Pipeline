@@ -53,6 +53,6 @@ def parse_fields(raw_fields):
 
 
 def get_mock_data():
-    with open("mock_data.json") as data:
+    with open("../mock_data.json") as data:
         binary = data.read()
         return binary
