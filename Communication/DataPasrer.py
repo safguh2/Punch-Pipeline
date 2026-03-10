@@ -1,5 +1,8 @@
 def parse_data(raw: dict):
+    entities = parse_entities(raw["nodesByLabel"])
     relations = parse_relations(raw["relationships"])
+
+    return entities, relations
 
 
 def parse_relations(relations: list):
@@ -27,3 +30,11 @@ def parse_relations(relations: list):
         })
 
     return parsed_relations
+
+
+def parse_entities(entities: dict):
+    parsed_entities = dict()
+    for label, entity_list in entities.items():
+        parsed_entities.update({label: entity_list})
+
+    return parsed_entities
