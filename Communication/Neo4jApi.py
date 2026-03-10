@@ -1,7 +1,7 @@
 import ast
 import json
 import requests
-from Communication.SchemaParser import parse_response
+from Communication.ModelParser import parse_response
 
 
 class Neo4jApi:

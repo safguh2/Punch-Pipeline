@@ -1,6 +1,6 @@
 import asyncio
 from pydantic import ValidationError, create_model, ConfigDict, BaseModel
-from Communication.SchemaParser import parse_response
+from Communication.ModelParser import parse_response
 from Communication.Neo4jApi import Neo4jApi
 
 
