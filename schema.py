@@ -1,5 +1,7 @@
 import asyncio
 from pydantic import ValidationError, create_model, ConfigDict, BaseModel
+from Communication.SchemaParser import parse_response
+from Communication.Neo4jApi import Neo4jApi
 
 
 class DynamicBase(BaseModel):
@@ -9,9 +11,9 @@ class DynamicBase(BaseModel):
 
 
 class SchemaValidator:
-    def __init__(self, api):
-        self.api = api
-        self.schemas = dict()
+    def __init__(self, api: Neo4jApi):
+        self.api: Neo4jApi = api
+        self.schemas: dict = dict()
 
         asyncio.create_task(self.schema_auto_loader())
 
@@ -23,7 +25,8 @@ class SchemaValidator:
 
     def load_schemas(self):
         self.schemas = dict()
-        for schema in self.api.get_schemas():
+        schemas: list = parse_response(self.api.get_schemas()["nodeLabels"])
+        for schema in schemas:
             self.schemas[schema["label"]] = create_model(schema['label'], __base__=DynamicBase, **schema["properties"])
 
     def verify(self, object: dict):

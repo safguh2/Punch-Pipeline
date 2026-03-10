@@ -4,5 +4,4 @@ class SotApi:
         self.port = port
 
     def send(self, obj: list):
-        x.
         print("data sent to SOT DB")

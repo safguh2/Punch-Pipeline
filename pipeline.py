@@ -1,7 +1,6 @@
 import asyncio
 
 from requests import RequestException
-from pydantic import ValidationError
 
 import schema
 import ast
@@ -48,6 +47,7 @@ async def main():
     verifier = schema.SchemaValidator(communicator.neo)
     queue: asyncio.Queue = start_stream(kafka_address, rabbitmq_address, external_db)
     workers = [asyncio.create_task(consume_data(queue, verifier, communicator)) for _ in range(workers_amount)]
+    parse_data()
     await asyncio.gather(*workers)
 
 
