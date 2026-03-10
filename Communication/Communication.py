@@ -1,7 +1,7 @@
 from Communication.SotApi import SotApi
 from Communication.Neo4jApi import Neo4jApi
 from Communication.DataPasrer import parse_data
-
+from Communication.SchemaParser import parse_schema
 
 class Communication:
     def __init__(self, neo: Neo4jApi, sot: SotApi):
@@ -13,5 +13,7 @@ class Communication:
         self.sot.send(obj)
 
     def update_sot(self):
-        data = self.neo.get_data()
-        parse_data(data)
+        # data = self.neo.get_data()
+        schemas = self.neo.get_schemas()
+        # parse_data(data)
+        parse_schema(schemas)

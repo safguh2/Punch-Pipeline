@@ -1,6 +1,6 @@
 import asyncio
 from pydantic import ValidationError, create_model, ConfigDict, BaseModel
-from Communication.ModelParser import parse_response
+from Communication.ModelParser import parse_to_model
 from Communication.Neo4jApi import Neo4jApi
 
 
@@ -25,7 +25,7 @@ class SchemaValidator:
 
     def load_schemas(self):
         self.schemas = dict()
-        schemas: list = parse_response(self.api.get_schemas()["nodeLabels"])
+        schemas: list = parse_to_model(self.api.get_schemas()["nodeLabels"])
         for schema in schemas:
             self.schemas[schema["label"]] = create_model(schema['label'], __base__=DynamicBase, **schema["properties"])
 
