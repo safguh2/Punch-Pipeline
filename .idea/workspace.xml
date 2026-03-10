@@ -7,8 +7,7 @@
     <list default="true" id="2d9e5534-8b2a-4974-8db7-a647ad925eed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Communication/Communication.py" beforeDir="false" afterPath="$PROJECT_DIR$/Communication/Communication.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Communication/SchemaParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Communication/SchemaParser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Communication/SotApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Communication/SotApi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication/SotProtocol.py" beforeDir="false" afterPath="$PROJECT_DIR$/Communication/SotProtocol.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

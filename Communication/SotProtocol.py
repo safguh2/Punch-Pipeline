@@ -38,7 +38,22 @@ def parse_label_schema_request(schemas: dict):
 
 
 def parse_relation_schema_request(relations):
-    pass
+    requests = list()
+    relations_data = list()
+
+    for relationship_type, properties in relations.items():
+        relations_data.append({
+            "relationshipType": relationship_type,
+            "properties": properties
+        })
+
+    for chunk in split_list(relations_data):
+        requests.append({
+            "code": 3,
+            "data": chunk
+        })
+
+    return requests
 
 
 def split_list(lst: list, size: int = 500):

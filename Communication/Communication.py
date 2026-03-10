@@ -20,7 +20,7 @@ class Communication:
         entities, relations = parse_data(data)
         label_schemas, relation_schemas = parse_schema(schemas)
 
-        # entity_requests = SotProtocol.parse_entity_request(entities)
+        entity_requests = SotProtocol.parse_entity_request(entities)
         schemas_requests = SotProtocol.parse_label_schema_request(label_schemas)
 
 
