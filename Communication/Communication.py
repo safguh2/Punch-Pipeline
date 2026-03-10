@@ -13,4 +13,5 @@ class Communication:
         self.sot.send(obj)
 
     def update_sot(self):
-        data = self.neo
+        data = self.neo.get_data()
+        parse_data(data)
