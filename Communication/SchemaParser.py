@@ -4,6 +4,7 @@ def parse_schema(raw):
 
     return label_schemas, relation_schemas
 
+
 def parse_label_schemas(schemas: list):
     parsed_schemas = dict()
     for schema in schemas:
