@@ -1,4 +1,4 @@
-code_dictionary = {"finish": 0, "entities": 1, "schemas": 2, "relations": 3}
+code_dictionary = {"finish": 0, "entities": 1, "relation entity": 2, "schemas": 3, "relations": 4}
 response_dictionary = {"ready": True, "retry": False}
 
 
@@ -17,6 +17,20 @@ def parse_entity_request(entities: dict):
 
     return requests
 
+def parse_relation_entity_request(entities: dict):
+    requests = list()
+
+    for label, entities_list in entities.items():
+        for chunk in split_list(entities_list):
+            requests.append({
+                "code": 2,
+                "data": {
+                    "label": label,
+                    "entities": chunk
+                }
+            })
+
+    return requests
 
 def parse_label_schema_request(schemas: dict):
     requests = list()
@@ -30,7 +44,7 @@ def parse_label_schema_request(schemas: dict):
 
     for chunk in split_list(schemas_data):
         requests.append({
-            "code": 2,
+            "code": 3,
             "data": chunk
         })
 
@@ -49,7 +63,7 @@ def parse_relation_schema_request(relations):
 
     for chunk in split_list(relations_data):
         requests.append({
-            "code": 3,
+            "code": 4,
             "data": chunk
         })
 

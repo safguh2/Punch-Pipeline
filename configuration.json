@@ -10,7 +10,7 @@
 	},
 	"sot": {
 		"ipaddress": "127.0.0.1",
-		"port": 6666
+		"port": 6969
 	},
 	"external_db": [
 		{
