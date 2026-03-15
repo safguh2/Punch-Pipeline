@@ -8,19 +8,11 @@ producer = KafkaProducer(
     bootstrap_servers='localhost:9092',
     value_serializer=lambda v: json.dumps(v).encode('utf-8')  # <-- serialize to JSON bytes
 )
-data = [{
-    "label": "relationShip",
-    "properties": {
-    "sourceId": "8c9f85f75906414abd2d71eec8402277",
-    "targetId": "c5868057216c483380a564eb689c6e1c",
-    "relationshipType": "ENROLLED_IN",
-    "tenantId": "tenant_mit",
-    "properties": {
-    "program": "BSc Computer Science",
-    "start_date": "2024-09-01"
-  }
-}
-    }]
+data = [
+    {
+
+    }
+]
 print(data)
 # Send to topic
 for item in data:

@@ -70,5 +70,17 @@ def parse_relation_schema_request(relations):
     return requests
 
 
+def parse_security_request(security):
+    requests = list()
+
+    for chunk in split_list(security):
+        requests.append({
+            "code": 5,
+            "data": chunk
+        })
+
+    return requests
+
+
 def split_list(lst: list, size: int = 500):
     return [lst[i:i + size] for i in range(0, len(lst), size)]

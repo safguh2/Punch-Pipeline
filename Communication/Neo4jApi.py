@@ -26,7 +26,6 @@ class Neo4jApi:
             # res = requests.post(f'{self.url}/dynamic/smart-create', json=str(obj), headers=self.headers)
             print(f'object has been sent to neo4j DB {str(obj)}')
 
-
     def get_schemas(self):
         response = requests.get(f'{self.url}/schema', headers=self.headers).text
         raw = json.loads(response)
@@ -35,4 +34,8 @@ class Neo4jApi:
 
     def get_data(self):
         response = requests.get(f'{self.url}/data/all', headers=self.headers).text
+        return json.loads(response)
+
+    def get_security(self):
+        response = requests.get(f'{self.url}/schema/property-security', headers=self.headers).text
         return json.loads(response)
