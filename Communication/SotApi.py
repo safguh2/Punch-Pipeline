@@ -7,11 +7,13 @@ logger = logging.getLogger(__name__)
 
 class SotApi:
     def __init__(self, ipaddress, port):
+        self.socket = None
         self.ipaddress = ipaddress
         self.port = port
-        self.socket: socket.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     def connect(self):
+        print("connecting")
+        self.socket: socket.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.socket.connect((self.ipaddress, self.port))
         logger.info(f"Connected to SOT at {self.ipaddress}:{self.port}")
 
@@ -35,9 +37,8 @@ class SotApi:
                         return False
 
                     # Wrap and send the request
-                    wrapper = {"code": index + 1, "data": request}
-                    self._send_message(wrapper)
-                    logger.debug(f"Sent request #{index} (attempt {retries + 1}): {wrapper}")
+                    self._send_message(request)
+                    logger.debug(f"Sent request #{index} (attempt {retries + 1}): {request  }")
 
                     # Wait for SOT server response
                     response = self._receive_message()

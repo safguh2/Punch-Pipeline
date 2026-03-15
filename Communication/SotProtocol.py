@@ -25,7 +25,7 @@ def parse_relation_entity_request(entities: dict):
             requests.append({
                 "code": 2,
                 "data": {
-                    "label": label,
+                    "relationshipType": label,
                     "entities": chunk
                 }
             })
