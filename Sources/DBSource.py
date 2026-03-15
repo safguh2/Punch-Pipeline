@@ -11,7 +11,14 @@ class DatabaseSource:
         self.conn = None
 
     async def connect(self):
-        self.conn = await asyncpg.connect(self.dsn)
+        connected: bool = False
+        while not connected:
+            try:
+                self.conn = await asyncpg.connect(self.dsn)
+                connected = True
+            except Exception as e:
+                print(f"couldn't connect to external db({self.dsn}), error:{str(e)}")
+                await asyncio.sleep(60)
 
     async def get_tables(self):
         query = """
