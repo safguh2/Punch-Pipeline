@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d9e5534-8b2a-4974-8db7-a647ad925eed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Sources/rabbitmq.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataProcess.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBSource.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/DBSource.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/sources.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/sources.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/pipeline.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
