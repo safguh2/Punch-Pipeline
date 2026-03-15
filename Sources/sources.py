@@ -1,22 +1,10 @@
 import asyncio
-from aiokafka import AIOKafkaConsumer
 import aio_pika
 import DBSource
 
-queue: asyncio.Queue = asyncio.Queue()
-async def kafka_handler(kafka_address):
-    consumer = AIOKafkaConsumer(
-        "test-topic",
-        bootstrap_servers=kafka_address,
-        group_id="my_group"
-    )
-    await consumer.start()
-    try:
-        async for message in consumer:
-            await queue.put(message.value)
+from kafka import create_kafka_handler
 
-    finally:
-        await consumer.stop()
+queue: asyncio.Queue = asyncio.Queue()
 
 
 async def rabbitmq_handler(rabbitmq_address):
@@ -46,7 +34,7 @@ def create_db_handlers(db_list):
 
 
 def start_stream(kafka_address, rabbitmq_address, external_db):
-    asyncio.create_task(kafka_handler(kafka_address))
-    asyncio.create_task(rabbitmq_handler(rabbitmq_address))
-    create_db_handlers(external_db)
+    asyncio.create_task(create_kafka_handler(kafka_address, queue))
+    #asyncio.create_task(rabbitmq_handler(rabbitmq_address))
+    #create_db_handlers(external_db)
     return queue

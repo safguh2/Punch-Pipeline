@@ -5,7 +5,6 @@ from requests import RequestException
 import schema
 import ast
 import configluz
-from sources import start_stream
 import SOTPipeline
 
 async def consume_data(queue, verifier, communicator):

@@ -11,4 +11,4 @@ async def backup_pipeline(communication: Communication, interval: int = 21600):
             communication.update_sot()
 
         except Exception as e:
-            print(e)
+            print(f"backup failed, error:{str(e)}")

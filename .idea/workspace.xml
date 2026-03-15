@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d9e5534-8b2a-4974-8db7-a647ad925eed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Sources/kafka.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SOTPipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/SOTPipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sources.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/sources.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +44,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Code\Punch-Pipeline\Sources" />
       <recent name="C:\Code\Punch-Pipeline\Communication" />
       <recent name="C:\Code\Punch-Pipeline\producers_mock" />
     </key>
@@ -141,7 +146,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sources.py" />
+      <option name="SCRIPT_NAME" value="C:\Code\Punch-Pipeline\Sources\sources.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
