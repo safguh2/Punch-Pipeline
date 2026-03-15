@@ -14,6 +14,5 @@ async def main():
     await asyncio.create_task(SOTPipeline.backup_pipeline(communicator))
     await asyncio.gather(*workers)
 
-
 if __name__ == "__main__":
     asyncio.run(main())

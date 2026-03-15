@@ -36,3 +36,8 @@ async def reflow(queue, obj):
     else:
         obj = {'count': 1, 'data': obj}
     await queue.put(str(obj).encode())
+
+
+def iconFix(icon):
+    clean_emoji = icon.encode('utf-16', 'surrogatepass').decode('utf-16')
+    print(clean_emoji.encode('utf-8'))

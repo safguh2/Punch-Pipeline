@@ -15,6 +15,8 @@ class Communication:
         self.neo.send(obj)
 
     def update_sot(self):
+        self.sot.connect()
+
         data = self.neo.get_data()
         schemas = self.neo.get_schemas()
         raw_security_info = self.neo.get_security()
@@ -29,8 +31,9 @@ class Communication:
         schemas_requests = SotProtocol.parse_label_schema_request(label_schemas)
         security_requests = SotProtocol.parse_security_request(security_info)
 
-        requests: list[dict] = entity_requests + relation_entity_requests + schemas_requests + relation_schema_requests + security_requests
-        self.sot.connect()
+        requests: list[dict] = entity_requests + relation_entity_requests
+        requests += relation_schema_requests + security_requests
+
         self.sot.send_requests(requests)
         self.sot.disconnect()
         print("done updating sot")

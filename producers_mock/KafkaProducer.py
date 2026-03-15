@@ -9,9 +9,7 @@ producer = KafkaProducer(
     value_serializer=lambda v: json.dumps(v).encode('utf-8')  # <-- serialize to JSON bytes
 )
 data = [
-    {
 
-    }
 ]
 print(data)
 # Send to topic

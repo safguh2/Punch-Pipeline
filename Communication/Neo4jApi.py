@@ -19,11 +19,13 @@ class Neo4jApi:
     def send(self, obj: dict):
         print(obj)
         if obj['label'] == self.relation_schema["label"]:
-            # res = requests.post(f'{self.url}/relationships', json=obj["properties"], headers=self.headers)
+            res = requests.post(f'{self.url}/relationships', json=obj["properties"], headers=self.headers)
+            print(res.text)
             print(f'relation has been sent to neo4j DB {str(obj)}')
 
         else:
-            # res = requests.post(f'{self.url}/dynamic/smart-create', json=str(obj), headers=self.headers)
+            res = requests.post(f'{self.url}/dynamic/smart-create', json=obj, headers=self.headers)
+            print(res.text)
             print(f'object has been sent to neo4j DB {str(obj)}')
 
     def get_schemas(self):
