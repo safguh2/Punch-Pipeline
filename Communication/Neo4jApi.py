@@ -17,6 +17,7 @@ class Neo4jApi:
         }
 
     def send(self, obj: dict):
+        print(obj)
         if obj['label'] == self.relation_schema["label"]:
             # res = requests.post(f'{self.url}/relationships', json=obj["properties"], headers=self.headers)
             print(f'relation has been sent to neo4j DB {str(obj)}')

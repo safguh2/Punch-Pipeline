@@ -12,6 +12,7 @@ def parse_relations(relations: list):
         for relation in relation_type["relationships"]:
             entity_from = relation.pop("from")
             entity_to = relation.pop("to")
+            relation.pop("_id")
             relation.update({
                 "from": {
                     "entity_id": entity_from["entityId"],

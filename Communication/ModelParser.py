@@ -1,7 +1,6 @@
 api_type_dictionary = {"string": str, "integer": int, "float": int, "boolean": bool, "date": str, "dict": dict}
 def parse_to_model(schemas):
     model_schemas = list()
-    print(schemas)
     for schema in schemas:
         label = schema['label']
 
@@ -14,7 +13,6 @@ def parse_to_model(schemas):
 
 def parse_fields(raw_fields):
     fields = dict()
-    print(raw_fields)
     for field in raw_fields:
         type = api_type_dictionary[field["type"].lower()]
         fields[field['name']] = (type, ...)

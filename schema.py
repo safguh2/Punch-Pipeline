@@ -35,8 +35,6 @@ class SchemaValidator:
             return False
 
         label = object['label']
-        print(label)
-        print(self.schemas)
         if label not in self.schemas:
             print("schema label doesn't exist in current schemas")
             return False
