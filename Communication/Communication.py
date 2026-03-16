@@ -32,8 +32,8 @@ class Communication:
         security_requests = SotProtocol.parse_security_request(security_info)
 
         requests: list[dict] = entity_requests + relation_entity_requests
-        requests += relation_schema_requests + security_requests
-
+        requests += relation_schema_requests + security_requests + schemas_requests
+        
         self.sot.send_requests(requests)
         self.sot.disconnect()
         print("done updating sot")
